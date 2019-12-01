@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import App from "./App/app.js";
+import App from "./App/App.js";
 
 const Main = () => {
   return <App />;

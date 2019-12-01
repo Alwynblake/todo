@@ -28,5 +28,3 @@ export default class NoteItem extends React.Component {
     )
   }
 }
-
-// <input type='text' value='this.state.username' id='username' onChange='inputHandler'

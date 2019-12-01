@@ -1,26 +1,24 @@
-// import React from 'react';
-import React, { useState, useEffect, useReducer } from "react";
+import React from 'react';
+// import React, { useState, useEffect, useReducer } from "react";
 import uuidv1 from 'uuid/v1';
 import NoteCreateForm from '../NoteCreateForm/NoteCreateForm';
 import NoteList from '../NoteList/NoteList';
 
-// export default class Dashboard extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     notes: [],
-  //     title: '',
-  //     content: '',
-  //   };
-  // }
+export default class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      notes: [],
+      title: '',
+      content: '',
+    };
+  }
   //////
-  const Dashboard = () => {
-    let [notes, setNotes] = useState([]);
-    let [title, setTitle] = useState('');
-    let [content, setContent] = useState('')
-  };
-
-
+  // const Dashboard = () => {
+  //   let [notes, setNotes] = useState([]);
+  //   let [title, setTitle] = useState('');
+  //   let [content, setContent] = useState('')
+  // };
   //////
 
   addNote = (title,content) => {
@@ -28,16 +26,7 @@ import NoteList from '../NoteList/NoteList';
     this.setState(prev => ({
       notes: [...prev.notes,{title, content,id}],
     }));
-
   };
-
-// handleChange = (event) => {
-//     let name equals event.target.name
-//     let { name, value } = event.target;
-//
-//     this.setState({ [name]:  value });
-// }
-
 
   handleTitle = (event) => this.setState({ title: event.target.value });
 
@@ -47,7 +36,6 @@ import NoteList from '../NoteList/NoteList';
     event.preventDefault();
 
     await this.addNote(this.state.title,this.state.content);
-// console.log(this.state,'saadadasdadad');
   };
 
   handleRemoveNote = (note) => {
@@ -78,12 +66,9 @@ import NoteList from '../NoteList/NoteList';
               notes={this.state.notes}
               handleRemoveNote={this.handleRemoveNote}
               handleUpdateNote={this.handleUpdateNote}
-
           />
         </div>
-
     );
   }
 }
 
-export default Dashboard;
